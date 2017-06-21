@@ -3,13 +3,11 @@
   <head>
     <title>Splurty</title>
     <meta name="viewport" content="width=device-width", initial-scale=1>
-
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width", initial-scale=1>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <header class="row">
       <div class="col-3">
@@ -23,26 +21,18 @@
               monkaS
           </div>
         <% end %>
-
       </div>
       <div class="col-4 col hidden-xs-down slogan">
         Splurting our unsolicitied advice about food since the day I was born
       </div>
       <div class="col-10 offset-1 offset-sm-0 col-sm-5 links">
          <!-- Button trigger modal -->
-          
         <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'}  %>
         &nbsp;&nbsp;
         <%= link_to 'About', about_path %>
       </div>
-
     </header>
-
     <hr />
-
-
-    
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -53,14 +43,11 @@
             </button>
             <h4 class="modal-title" id="myModalLabel">Contribute Your Quote</h4>
           </div>
-
           <%= simple_form_for Quote.new do |f| %>
             <div class="modal-body">
-            
               <%= f.input :saying, label: "What is the saying you want to add?", placeholder: "2 EASY FOR RTZ" %>
               <br />
               <%= f.input :author, label: "Who said this?", placeholder: "Twitch Chat" %>
-             
             </div>
             <div class="modal-footer">
                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -70,22 +57,15 @@
         </div>
       </div>
     </div>
-
-
-
     <br class="clear"/>
-
     <div class="container">
       <% if flash[:error].present? %>
         <div class="col-10 offset-1 alert alert-danger">
           <%= flash[:error].html_safe %>
         </div>
       <% end %>
-
     <%= yield %>
-
     </div>
-
     <div class="footer">
       <div class="container">
        <div class="row">
@@ -95,10 +75,8 @@
         <div class="col-12 col-sm-6 footer-blurb">
           Proudly hacking in Los Angeles, CA by Wilson P.
         </div>
-        
        </div>
       </div>
     </div>
-
   </body>
 </html>
